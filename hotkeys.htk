@@ -1,0 +1,54 @@
+F1:Buy:BUY=Send
+F2:Buy Bid:Price=Bid;BUY=Send
+F3:Buy Ask+.05:Price=Ask+.05;BUY=Send
+
+`:Chart market stop for all position:Account=TRP225324;Route=SMAT;TIF=GTC;Share=pos;NewOrder StopMarket ;
+F5:Chart trading 100:Account=TRP225324;Route=SMAT;Share=100;TIF=GTC;NewOrder Limit
+F6:Chart trading 200:Account=TRP225324;Route=SMAT;Share=200;TIF=GTC;NewOrder Limit
+F7:Chart trading 500:Account=TRP225324;Route=SMAT;Share=500;TIF=GTC;NewOrder Limit
+F8:Chart trading 1000:Account=TRP225324;Route=SMAT;Share=1000;TIF=GTC;NewOrder Limit
+
+F10:Sell Bid-.05:Price=Bid-.05;SELL=Send
+F11:Sell Ask:Price=Ask;SELL=Send
+F12:Sell:SELL=Send
+
+
+Ctrl+1:Chart time frame 1 MIN for 1 day:MinuteChart 1 1d; ZoomFit
+Ctrl+2:Chart time frame 5 MIN for 1 day:MinuteChart 5 1d; ZoomFit
+Ctrl+3:Chart time frame 1H for 15 day:MinuteChart 60 15d; ZoomFit
+Ctrl+4:Chart time frame DAILY for 365 days:DayChart 1d 365d; ZoomFit
+Ctrl+5:Chart time frame MONTHLY for 5 years:DayChart 1m 5ya
+
+KeyLeft:Share Size -100 Shares:Share=Share-100
+KeyRight:Share Size +100 Shares:Share=Share+100
+KeyUp:+ .01:Price=Price+0.01
+KeyDown:- .01:Price=Price-0.01
+
+ESC:Exit group CANCEL all open orders of symbol in montage:CXL ALLSYMB
+Shift+ESC:Exit group CLOSE all open positions (all orders must be cancelled first):PANIC
+
+':Shorts locale:NewWindow ShortLocate
+
+Home:Chart management Fit the chart:ZoomFit
+End:Chart management Trigger Extended trading hours:ShowPreAftMkt
+PageUp:Chart management Toggle drag mode:ToggleDragMode
+PageDown:Chart management HorizontalLine:HorizontalLine
+
+Ctrl+C:Close MID PRICE 1/4 pos:CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos*.25;Route=LIMIT;Send=Reverse
+Ctrl+X:Close MID PRICE 1/2 pos:CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos*.5;Route=LIMIT;Send=Reverse
+Ctrl+Z:Close MID PRICE pos:CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos;Route=LIMIT;Send=Reverse
+Ctrl+Shift+C:Close MARKET 1/4 pos:CXL ALLSYMB;Share=Pos*.25;Route=MARKET;Send=Reverse
+Ctrl+Shift+X:Close MARKET 1/2 pos:CXL ALLSYMB;Share=Pos*.5;Route=MARKET;Send=Reverse
+Ctrl+Shift+Z:Close MARKET pos:CXL ALLSYMB;Share=Pos;Route=MARKET;Send=Reverse
+
+Ctrl+Q:Offset Buy (TakeProfit) Bid -.10:Price=Bid-.10;Share=Share;BUY=Send
+Ctrl+W:Offset Buy (TakeProfit) Bid -.20:Price=Bid-.20;Share=Share;BUY=Send
+Ctrl+E:Offset Buy (TakeProfit) Bid -.50:Price=Bid-.50;Share=Share;BUY=Send
+Ctrl+R:Offset Buy (TakeProfit) Bid -1:Price=Bid-1;Share=Share;BUY=Send
+Ctrl+T:Offset Buy (TakeProfit) Bid -2:Price=Bid-2;Share=Share;BUY=Send
+
+Ctrl+]:Offset Sell (TakeProfit) Ask +.10:Price=Ask+.10;Share=Share;SELL=Send
+Ctrl+[:Offset Sell (TakeProfit) Ask +.20:Price=Ask+.20;Share=Share;SELL=Send
+Ctrl+P:Offset Sell (TakeProfit) Ask +.50:Price=Ask+.50;Share=Share;SELL=Send
+Ctrl+O:Offset Sell (TakeProfit) Ask +1:Price=Ask+1;Share=Share;SELL=Send
+Ctrl+I:Offset Sell (TakeProfit) Ask +2:Price=Ask+2;Share=Share;SELL=Send
