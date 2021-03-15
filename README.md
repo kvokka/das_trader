@@ -23,7 +23,7 @@ have them around.
 key press
 `Shift` key separately or with `Ctrl` combination means `NOW!`
 
-Some hotkeys are using `TRP225324` account as a placeholder, replace it with your
+Some hotkeys are using `TRP6663629` account as a placeholder, replace it with your
 account before usage.
 
 Almost all hotkeys does not change the route, so I prefer not select it in the
@@ -55,8 +55,8 @@ Atm there are a few key groups:
 
 * `F1`-`F3` Buy orders for instant or almost instant execution
 
-* `F5`-`F8` Chart Trader
-* ` Chart trader stop loss for entire position (old stops should be removed manually)
+* `F5`-`F8` Chart Trader for 100, 200, 500, 1000 shares
+* `F4` & `F9` Chart trader stop loss for entire position for longs and shorts
 
 * `F9`-`F12` Sell orders for instant or almost instant execution
 

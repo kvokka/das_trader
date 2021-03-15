@@ -2,11 +2,12 @@ F1:Buy:BUY=Send
 F2:Buy Bid:Price=Bid;BUY=Send
 F3:Buy Ask+.05:Price=Ask+.05;BUY=Send
 
-`:Chart market stop for all position:Account=TRP225324;Route=SMAT;TIF=GTC;Share=pos;NewOrder StopMarket ;
-F5:Chart trading 100:Account=TRP225324;Route=SMAT;Share=100;TIF=GTC;NewOrder Limit
-F6:Chart trading 200:Account=TRP225324;Route=SMAT;Share=200;TIF=GTC;NewOrder Limit
-F7:Chart trading 500:Account=TRP225324;Route=SMAT;Share=500;TIF=GTC;NewOrder Limit
-F8:Chart trading 1000:Account=TRP225324;Route=SMAT;Share=1000;TIF=GTC;NewOrder Limit
+F4:Chart market stop for all position for longs:CXL BELOWAVGCOST;Account=TRP6663629;Route=SMAT;TIF=GTC;Share=pos;NewOrder StopMarket;
+F5:Chart trading 100:Account=TRP6663629;Route=SMAT;Share=100;TIF=GTC;NewOrder Limit
+F6:Chart trading 200:Account=TRP6663629;Route=SMAT;Share=200;TIF=GTC;NewOrder Limit
+F7:Chart trading 500:Account=TRP6663629;Route=SMAT;Share=500;TIF=GTC;NewOrder Limit
+F8:Chart trading 1000:Account=TRP6663629;Route=SMAT;Share=1000;TIF=GTC;NewOrder Limit
+F9:Chart market stop for all position for longs:CXL ABOVEAVGCOST;Account=TRP6663629;Route=SMAT;TIF=GTC;Share=pos;NewOrder StopMarket;
 
 F10:Sell Bid-.05:Price=Bid-.05;SELL=Send
 F11:Sell Ask:Price=Ask;SELL=Send
