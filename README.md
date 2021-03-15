@@ -23,8 +23,8 @@ have them around.
 key press
 `Shift` key separately or with `Ctrl` combination means `NOW!`
 
-Some hotkeys are using `TRP6663629` account as a placeholder, replace it with your
-account before usage.
+Some hotkeys are using `$ACCOUNT_NUMBER` account as a placeholder, replace it
+with your account before usage.
 
 Almost all hotkeys does not change the route, so I prefer not select it in the
 hotkeys and define it in the trading session process. Keep in mind that, and
@@ -45,6 +45,18 @@ this techniques give way less room for human error).
 Since my style assume very active trading, instead of creating 1 STOP order for
 each trade i prefer to exit manually and update 1 STOP for all my entries. For
 less active traders this might be not convenient.
+
+### Build
+
+To replace the placeholders rename `.env.example` to `.env` and fill in with
+your values. Then run
+
+```bash
+make
+```
+
+it will produce a `hotkeys.htk` file which you need to put in your DAS Trader
+Pro folder
 
 ### Key groups
 
