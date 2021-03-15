@@ -34,12 +34,12 @@ End:Chart management Trigger Extended trading hours:ShowPreAftMkt
 PageUp:Chart management Toggle drag mode:ToggleDragMode
 PageDown:Chart management HorizontalLine:HorizontalLine
 
-Ctrl+C:Close MID PRICE 1/4 pos:CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos*.25;Route=LIMIT;Send=Reverse
-Ctrl+X:Close MID PRICE 1/2 pos:CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos*.5;Route=LIMIT;Send=Reverse
-Ctrl+Z:Close MID PRICE pos:CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos;Route=LIMIT;Send=Reverse
-Ctrl+Shift+C:Close MARKET 1/4 pos:CXL ALLSYMB;Share=Pos*.25;Route=MARKET;Send=Reverse
-Ctrl+Shift+X:Close MARKET 1/2 pos:CXL ALLSYMB;Share=Pos*.5;Route=MARKET;Send=Reverse
-Ctrl+Shift+Z:Close MARKET pos:CXL ALLSYMB;Share=Pos;Route=MARKET;Send=Reverse
+Ctrl+C:Close MID PRICE 1/4 pos:DefShare=Share;CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos*.25;Route=LIMIT;Send=Reverse;Share=DefShare
+Ctrl+X:Close MID PRICE 1/2 pos:DefShare=Share;CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos*.5;Route=LIMIT;Send=Reverse;Share=DefShare
+Ctrl+Z:Close MID PRICE pos:DefShare=Share;CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos;Route=LIMIT;Send=Reverse;Share=DefShare
+Ctrl+Shift+C:Close MARKET 1/4 pos:DefShare=Share;CXL ALLSYMB;Share=Pos*.25;Route=MARKET;Send=Reverse;Route=LIMIT;Share=DefShare
+Ctrl+Shift+X:Close MARKET 1/2 pos:DefShare=Share;CXL ALLSYMB;Share=Pos*.5;Route=MARKET;Send=Reverse;Route=LIMIT;Share=DefShare
+Ctrl+Shift+Z:Close MARKET pos:DefShare=Share;CXL ALLSYMB;Share=Pos;Route=MARKET;Send=Reverse;Route=LIMIT;Share=DefShare
 
 Ctrl+Q:Offset Buy (TakeProfit) Bid -.10:Price=Bid-.10;Share=Share;BUY=Send
 Ctrl+W:Offset Buy (TakeProfit) Bid -.20:Price=Bid-.20;Share=Share;BUY=Send
