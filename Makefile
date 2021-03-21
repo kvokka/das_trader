@@ -1,3 +1,3 @@
 build:
-	@source .env && eval "echo \"$$(cat hotkeys-base.htk)\"" > hotkeys.htk
+	@source .env && eval "echo \"$$(cat hotkey-base.htk)\"" > hotkey.htk
 	@echo Done

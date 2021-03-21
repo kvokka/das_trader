@@ -55,7 +55,7 @@ your values. Then run
 make
 ```
 
-it will produce a `hotkeys.htk` file which you need to put in your DAS Trader
+it will produce a `hotkey.htk` file which you need to put in your DAS Trader
 Pro folder
 
 ### Key groups
