@@ -2,6 +2,10 @@
 
 Das Version 5.6.4.2
 
+## Dependencies
+
+  * `envsubst`, for mac you can install it with `brew install gettext`
+
 ## Hotkeys
 
 ### Precautions
@@ -22,9 +26,6 @@ have them around.
 `Ctrl` key is used for the most combinations. This helps to avoid any accidental
 key press.
 `Shift` key by it's own or with `Ctrl` combination means `NOW!`.
-
-Some hotkeys are using `$ACCOUNT_NUMBER` account as a placeholder, replace it
-with your account before usage.
 
 Almost all hotkeys does not change the route, so I prefer not select it in the
 hotkeys and define it in the trading session process. Keep in mind that, and
@@ -55,8 +56,9 @@ your values. Then run
 make
 ```
 
-it will produce a `hotkey.htk` file which you need to put in your DAS Trader
-Pro folder
+it will produce a `hotkey.htk` file for demo and `hotkey-live` for live account
+which you need to put in your DAS Trader Pro folder and select proper file in
+DAS.
 
 ### Key groups
 
