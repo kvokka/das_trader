@@ -20,7 +20,7 @@ and notes separate. I'm still not sure about some hotkeys scripts, but want to
 have them around.
 
 `Ctrl` key is used for the most combinations. This helps to avoid any accidental
-key press. 
+key press.
 `Shift` key by it's own or with `Ctrl` combination means `NOW!`.
 
 Some hotkeys are using `$ACCOUNT_NUMBER` account as a placeholder, replace it
