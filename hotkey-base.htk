@@ -29,8 +29,8 @@ KeyDown:- .01:Price=Price-0.01
 ESC:Exit group CANCEL all open orders of symbol in montage:CXL ALLSYMB
 Shift+ESC:Exit group CLOSE all open positions (all orders must be cancelled first):PANIC
 
-\:Shorts locale:NewWindow ShortLocate
-`:https://finviz.com/quote.ashx?t=%SYMB%
+':Shorts locale:NewWindow ShortLocate
+`:Finviz:https://finviz.com/quote.ashx?t=%SYMB%
 
 Home:Chart management Toggle drag mode:ToggleDragMode
 End:Chart management Trigger Extended trading hours:ShowPreAftMkt
