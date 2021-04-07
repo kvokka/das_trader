@@ -87,6 +87,8 @@ the position (with `Shift` key it'll be exit by market, otherwise by current mid
 price). note that by DAS Trader design this have to cancel all the orders before
 running this script.
 
+* `Ctrl+TAB` + `Shift+TAB` to toggle windows title bars
+
 ### Unused combinations
 
 Atm I found for myself, that it is easier to manually create STOP and TP orders
