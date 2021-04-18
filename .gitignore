@@ -1,3 +1,4 @@
 hotkeys/.env
-hotkeys/hotkey.htk
-hotkeys/hotkey_live.htk
+hotkeys/output/
+watchlists/.env
+watchlists/output/

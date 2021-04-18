@@ -4,6 +4,6 @@ export
 build:
 	@which envsubst > /dev/null
 	@mkdir -p $$OUTPUT_PATH
-	@VERSION=$$(cat VERSION) ACCOUNT_NUMBER=$$DEMO_ACCOUNT_NUMBER envsubst < hotkey-base.htk > $$OUTPUT_PATH/hotkey.htk
-	@VERSION=$$(cat VERSION) ACCOUNT_NUMBER=$$LIVE_ACCOUNT_NUMBER envsubst < hotkey-base.htk > $$OUTPUT_PATH/hotkey_live.htk
+	@VERSION=$$(cat VERSION) ACCOUNT_NUMBER=$$DEMO_ACCOUNT_NUMBER envsubst < input/hotkey-base.htk > $$OUTPUT_PATH/hotkey.htk
+	@VERSION=$$(cat VERSION) ACCOUNT_NUMBER=$$LIVE_ACCOUNT_NUMBER envsubst < input/hotkey-base.htk > $$OUTPUT_PATH/hotkey_live.htk
 	@echo Hotkey files created at $$OUTPUT_PATH

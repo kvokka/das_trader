@@ -1,7 +1,3 @@
-## Dependencies
-
-  * `envsubst`, for mac you can install it with `brew install gettext`
-
 ## Hotkeys
 
 ### Precautions
