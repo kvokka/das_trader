@@ -1,3 +1,3 @@
-.env
-hotkey.htk
-hotkey_live.htk
+hotkeys/.env
+hotkeys/hotkey.htk
+hotkeys/hotkey_live.htk
