@@ -10,3 +10,9 @@ This includes:
 ## Global dependencies
 
   * `envsubst`, for mac you can install it with `brew install gettext`
+
+## Build all
+
+```bash
+make
+```
