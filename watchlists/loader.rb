@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 require 'csv'
 require 'pathname'
 require 'fileutils'
 
+# Load and parse provided text files
 class CsvLoader
+  # One parsed line representation
   class Line
     attr_reader :symbol, :user_notes
 
@@ -24,7 +28,7 @@ class CsvLoader
 
   def initialize(path)
     @path = path
-    @loaded = Hash.new { |h,k| h[k] = [] }
+    @loaded = Hash.new { |h, k| h[k] = [] }
   end
 
   def call
@@ -32,22 +36,27 @@ class CsvLoader
       watchlist = File.basename(file, File.extname(file))
 
       File.open(file, 'r').each do |line|
-        symbol, *user_notes = line.split
-
-        # Remove extra characters for easier copy/paste
-        symbol&.gsub!(/[^\p{Alnum} -]/, '')
-
-        if symbol && loaded[watchlist].detect { |e| e == symbol }
-          puts(%Q[===> Symbol #{symbol} was already loaded in watchlist #{watchlist}])
-        end
-
-        # Remove empty comments
-        user_notes = nil if user_notes.empty?
-
-        loaded[watchlist] << Line.new(symbol: symbol, user_notes: user_notes)
+        loaded[watchlist] << build_line(line, watchlist)
       end
     end
     loaded
   end
-end
 
+  private
+
+  def build_line(line, watchlist)
+    symbol, *user_notes = line.split
+
+    # Remove extra characters for easier copy/paste
+    symbol&.gsub!(/[^\p{Alnum} -]/, '')
+
+    if symbol && loaded[watchlist].detect { |e| e == symbol }
+      puts(%(===> Symbol #{symbol} was already loaded in watchlist #{watchlist}))
+    end
+
+    # Remove empty comments
+    user_notes = nil if user_notes.empty?
+
+    Line.new(symbol: symbol, user_notes: user_notes)
+  end
+end
