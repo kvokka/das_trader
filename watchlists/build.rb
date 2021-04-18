@@ -25,14 +25,19 @@ CSV.open(output_path.join('empty.csv'), "wb") do |csv|
 end
 
 Dir[input_path.join('*')].each do |file|
-  csv_filename = File.basename(file, File.extname(file)) << '.csv'
+  watchlist = File.basename(file, File.extname(file))
+  csv_filename = watchlist + '.csv'
+  loaded_symbols = {}
+
   CSV.open(output_path.join(csv_filename), "wb") do |csv|
     csv << COLUMNS
     File.open(file, 'r').each do |line|
       symbol, *user_notes = line.split
 
       # Remove extra characters for easier copy/paste
-      symbol.gsub!(/[^\p{Alnum} -]/, '')
+      symbol&.gsub!(/[^\p{Alnum} -]/, '')
+      puts(%Q[===> Symbol #{symbol} was already loaded in watchlist #{watchlist}]) if loaded_symbols[symbol]
+      loaded_symbols[symbol] = true if symbol
 
       # Remove empty comments
       user_notes = nil if user_notes.empty?
