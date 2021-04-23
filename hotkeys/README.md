@@ -81,6 +81,21 @@ running this script.
 
 * `Ctrl+TAB` + `Shift+TAB` to toggle windows title bars
 
+* `TAB` and `\` keys are for breakeven stop loss for full position with
+canceling all previous stop losses
+
+* `Q`,`W`,`E`,`R`,`T`,`Y` - TakeProfit with Buy order
+* `]`,`[`,`P`,`O`,`I`,`U` - TakeProfit with Sell order
+
+* `A`,`S`,`D`,`F`,`G` - StopLoss on Buy side
+* `'`,`;`,`L`,`K`,`J` - StopLoss on Sell side
+
+* `Ctrl+UP`, `Ctrl+Alt+UP` - Scalp orders with 5 and 10 cents TakeProfit on the
+Long side
+
+* `Ctrl+DOWN`, `Ctrl+Alt+DOWN` - Scalp orders with 5 and 10 cents TakeProfit on the
+Short side
+
 ### Unused combinations
 
 Atm I found for myself, that it is easier to manually create STOP and TP orders

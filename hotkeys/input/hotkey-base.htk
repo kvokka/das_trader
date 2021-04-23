@@ -29,7 +29,7 @@ KeyDown:- .01:Price=Price-0.01
 ESC:Exit group CANCEL all open orders of symbol in montage:CXL ALLSYMB
 Shift+ESC:Exit group CLOSE all open positions (all orders must be cancelled first):PANIC
 
-':Shorts locale:NewWindow ShortLocate
+=:Shorts locale:NewWindow ShortLocate
 \:Finviz:http://finviz.com/quote.ashx?t=%SYMB%
 
 Home:Chart management Toggle drag mode:ToggleDragMode
@@ -61,20 +61,24 @@ Ctrl+O:Offset Sell (TakeProfit) Ask +.50:Price=Ask+.50;Share=Share;SELL=Send
 Ctrl+I:Offset Sell (TakeProfit) Ask  +1:Price=Ask+1;Share=Share;SELL=Send
 Ctrl+U:Offset Sell (TakeProfit) Ask  +3:Price=Ask+3;Share=Share;SELL=Send
 
-Ctrl+A:Buy Stop loss Breakeven:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=AvgCost;Share=Pos;BUY=Send;
+TAB:Buy Stop loss Breakeven:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=AvgCost;Share=Pos;BUY=Send;
+
+Ctrl+A:Buy Stop loss  Bid +.10:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+.10;Share=Pos;BUY=Send;
 Ctrl+S:Buy Stop loss  Bid +.20:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+.20;Share=Pos;BUY=Send;
 Ctrl+D:Buy Stop loss  Bid +.50:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+.50;Share=Pos;BUY=Send;
 Ctrl+F:Buy Stop loss  Bid   +1:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+1;Share=Pos;BUY=Send;
 Ctrl+G:Buy Stop loss  Bid   +3:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+3;Share=Pos;BUY=Send;
 
-:Sell Stop loss Breakeven:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=AvgCost;Share=Pos;SELL=Send;
-:Sell Stop loss  Ask -.20:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-.20;Share=Pos;SELL=Send;
+':Sell Stop loss Breakeven:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=AvgCost;Share=Pos;SELL=Send;
+
+`:Sell Stop loss  Ask -.10:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-.10;Share=Pos;SELL=Send;
+;:Sell Stop loss  Ask -.20:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-.20;Share=Pos;SELL=Send;
 Ctrl+L:Sell Stop loss  Ask -.50:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-.50;Share=Pos;SELL=Send;
 Ctrl+K:Sell Stop loss  Ask   -1:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-1;Share=Pos;SELL=Send;
 Ctrl+J:Sell Stop loss  Ask   -3:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-3;Share=Pos;SELL=Send;
 
-:Buy Bid and Add TakeProfit order 05 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:LIMIT PX:AvgCost2+0.05 ACT:SELL QTY:Share TIF:DAY+
-:Buy Bid and Add TakeProfit order 10 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:LIMIT PX:AvgCost2+0.10 ACT:SELL QTY:Share TIF:DAY+
+Ctrl+KeyUp:Buy Bid and Add TakeProfit order 05 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:LIMIT PX:AvgCost2+0.05 ACT:SELL QTY:Share TIF:DAY+
+Alt+Ctrl+KeyUp:Buy Bid and Add TakeProfit order 10 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:LIMIT PX:AvgCost2+0.10 ACT:SELL QTY:Share TIF:DAY+
 
-:Sell Ask and Add TakeProfit order 05 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:LIMIT PX:AvgCost2-0.05 ACT:BUY QTY:Share TIF:DAY+
-:Sell Ask and Add TakeProfit order 10 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:LIMIT PX:AvgCost2-0.10 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+KeyDown:Sell Ask and Add TakeProfit order 05 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:LIMIT PX:AvgCost2-0.05 ACT:BUY QTY:Share TIF:DAY+
+Alt+Ctrl+KeyDown:Sell Ask and Add TakeProfit order 10 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:LIMIT PX:AvgCost2-0.10 ACT:BUY QTY:Share TIF:DAY+
