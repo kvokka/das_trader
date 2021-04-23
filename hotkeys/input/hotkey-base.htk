@@ -47,14 +47,34 @@ Ctrl+Shift+C:Close MARKET 1/4 pos:DefShare=Share;CXL ALLSYMB;Share=Pos*.25;Route
 Ctrl+Shift+X:Close MARKET 1/2 pos:DefShare=Share;CXL ALLSYMB;Share=Pos*.5;Route=MARKET;Send=Reverse;Route=LIMIT;Share=DefShare
 Ctrl+Shift+Z:Close MARKET pos:DefShare=Share;CXL ALLSYMB;Share=Pos;Route=MARKET;Send=Reverse;Route=LIMIT;Share=DefShare
 
-Ctrl+Q:Offset Buy (TakeProfit) Bid -.10:Price=Bid-.10;Share=Share;BUY=Send
-Ctrl+W:Offset Buy (TakeProfit) Bid -.20:Price=Bid-.20;Share=Share;BUY=Send
-Ctrl+E:Offset Buy (TakeProfit) Bid -.50:Price=Bid-.50;Share=Share;BUY=Send
-Ctrl+R:Offset Buy (TakeProfit) Bid -1:Price=Bid-1;Share=Share;BUY=Send
-Ctrl+T:Offset Buy (TakeProfit) Bid -2:Price=Bid-2;Share=Share;BUY=Send
+Ctrl+Q:Offset Buy (TakeProfit) Bid -.05:Price=Bid-.05;Share=Share;BUY=Send
+Ctrl+W:Offset Buy (TakeProfit) Bid -.10:Price=Bid-.10;Share=Share;BUY=Send
+Ctrl+E:Offset Buy (TakeProfit) Bid -.20:Price=Bid-.20;Share=Share;BUY=Send
+Ctrl+R:Offset Buy (TakeProfit) Bid -.50:Price=Bid-.50;Share=Share;BUY=Send
+Ctrl+T:Offset Buy (TakeProfit) Bid  -1:Price=Bid-1;Share=Share;BUY=Send
+Ctrl+Y:Offset Buy (TakeProfit) Bid  -3:Price=Bid-2;Share=Share;BUY=Send
 
-Ctrl+]:Offset Sell (TakeProfit) Ask +.10:Price=Ask+.10;Share=Share;SELL=Send
-Ctrl+[:Offset Sell (TakeProfit) Ask +.20:Price=Ask+.20;Share=Share;SELL=Send
-Ctrl+P:Offset Sell (TakeProfit) Ask +.50:Price=Ask+.50;Share=Share;SELL=Send
-Ctrl+O:Offset Sell (TakeProfit) Ask +1:Price=Ask+1;Share=Share;SELL=Send
-Ctrl+I:Offset Sell (TakeProfit) Ask +2:Price=Ask+2;Share=Share;SELL=Send
+Ctrl+]:Offset Sell (TakeProfit) Ask +.05:Price=Ask+.05;Share=Share;SELL=Send
+Ctrl+[:Offset Sell (TakeProfit) Ask +.10:Price=Ask+.10;Share=Share;SELL=Send
+Ctrl+P:Offset Sell (TakeProfit) Ask +.20:Price=Ask+.20;Share=Share;SELL=Send
+Ctrl+O:Offset Sell (TakeProfit) Ask +.50:Price=Ask+.50;Share=Share;SELL=Send
+Ctrl+I:Offset Sell (TakeProfit) Ask  +1:Price=Ask+1;Share=Share;SELL=Send
+Ctrl+U:Offset Sell (TakeProfit) Ask  +3:Price=Ask+3;Share=Share;SELL=Send
+
+Ctrl+A:Buy Stop loss Breakeven:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=AvgCost;Share=Pos;BUY=Send;
+Ctrl+S:Buy Stop loss  Bid +.20:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+.20;Share=Pos;BUY=Send;
+Ctrl+D:Buy Stop loss  Bid +.50:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+.50;Share=Pos;BUY=Send;
+Ctrl+F:Buy Stop loss  Bid   +1:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+1;Share=Pos;BUY=Send;
+Ctrl+G:Buy Stop loss  Bid   +3:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+3;Share=Pos;BUY=Send;
+
+:Sell Stop loss Breakeven:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=AvgCost;Share=Pos;SELL=Send;
+:Sell Stop loss  Ask -.20:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-.20;Share=Pos;SELL=Send;
+Ctrl+L:Sell Stop loss  Ask -.50:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-.50;Share=Pos;SELL=Send;
+Ctrl+K:Sell Stop loss  Ask   -1:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-1;Share=Pos;SELL=Send;
+Ctrl+J:Sell Stop loss  Ask   -3:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-3;Share=Pos;SELL=Send;
+
+:Buy Bid and Add TakeProfit order 05 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:LIMIT PX:AvgCost2+0.05 ACT:SELL QTY:Share TIF:DAY+
+:Buy Bid and Add TakeProfit order 10 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:LIMIT PX:AvgCost2+0.10 ACT:SELL QTY:Share TIF:DAY+
+
+:Sell Ask and Add TakeProfit order 05 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:LIMIT PX:AvgCost2-0.05 ACT:BUY QTY:Share TIF:DAY+
+:Sell Ask and Add TakeProfit order 10 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:LIMIT PX:AvgCost2-0.10 ACT:BUY QTY:Share TIF:DAY+
