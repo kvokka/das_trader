@@ -5,11 +5,14 @@ F2:Buy Bid:Price=Bid;BUY=Send
 F3:Buy Ask+.05:Price=Ask+.05;BUY=Send
 
 F4:Chart market stop for all position for longs:CXL BELOWAVGCOST;Account=$ACCOUNT_NUMBER;Route=$CHART_TRADER_STOP_ROUTE;TIF=DAY+;Share=pos;NewOrder StopMarket;
-F5:Chart trading 100:Account=$ACCOUNT_NUMBER;Route=$CHART_TRADER_ROUTE;Share=100;TIF=DAY+;NewOrder Limit
-F6:Chart trading 200:Account=$ACCOUNT_NUMBER;Route=$CHART_TRADER_ROUTE;Share=200;TIF=DAY+;NewOrder Limit
-F7:Chart trading 500:Account=$ACCOUNT_NUMBER;Route=$CHART_TRADER_ROUTE;Share=500;TIF=DAY+;NewOrder Limit
+F5:Chart trading 100:Account=$ACCOUNT_NUMBER ;Route=$CHART_TRADER_ROUTE;Share=100 ;TIF=DAY+;NewOrder Limit
+F6:Chart trading 200:Account=$ACCOUNT_NUMBER ;Route=$CHART_TRADER_ROUTE;Share=200 ;TIF=DAY+;NewOrder Limit
+F7:Chart trading 500:Account=$ACCOUNT_NUMBER ;Route=$CHART_TRADER_ROUTE;Share=500 ;TIF=DAY+;NewOrder Limit
 F8:Chart trading 1000:Account=$ACCOUNT_NUMBER;Route=$CHART_TRADER_ROUTE;Share=1000;TIF=DAY+;NewOrder Limit
 F9:Chart market stop for all position for longs:CXL ABOVEAVGCOST;Account=$ACCOUNT_NUMBER;Route=$CHART_TRADER_STOP_ROUTE;TIF=DAY+;Share=pos;NewOrder StopMarket;
+
+Ctrl+F4:Buy Stop loss Breakeven :CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=AvgCost;Share=Pos;BUY=Send;
+Ctrl+F9:Sell Stop loss Breakeven:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=AvgCost;Share=Pos;SELL=Send;
 
 F10:Sell Bid-.05:Price=Bid-.05;SELL=Send
 F11:Sell Ask:Price=Ask;SELL=Send
@@ -61,15 +64,11 @@ Ctrl+O:Offset Sell (TakeProfit) Ask +.50:Price=Ask+.50;Share=Share;SELL=Send
 Ctrl+I:Offset Sell (TakeProfit) Ask  +1:Price=Ask+1;Share=Share;SELL=Send
 Ctrl+U:Offset Sell (TakeProfit) Ask  +3:Price=Ask+3;Share=Share;SELL=Send
 
-TAB:Buy Stop loss Breakeven:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=AvgCost;Share=Pos;BUY=Send;
-
 Ctrl+A:Buy Stop loss  Bid +.10:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+.10;Share=Pos;BUY=Send;
 Ctrl+S:Buy Stop loss  Bid +.20:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+.20;Share=Pos;BUY=Send;
 Ctrl+D:Buy Stop loss  Bid +.50:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+.50;Share=Pos;BUY=Send;
 Ctrl+F:Buy Stop loss  Bid   +1:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+1;Share=Pos;BUY=Send;
 Ctrl+G:Buy Stop loss  Bid   +3:CXL ABOVEAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+3;Share=Pos;BUY=Send;
-
-':Sell Stop loss Breakeven:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=AvgCost;Share=Pos;SELL=Send;
 
 `:Sell Stop loss  Ask -.10:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-.10;Share=Pos;SELL=Send;
 ;:Sell Stop loss  Ask -.20:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-.20;Share=Pos;SELL=Send;
