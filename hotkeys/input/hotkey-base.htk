@@ -33,7 +33,7 @@ ESC:Exit group CANCEL all open orders of symbol in montage:CXL ALLSYMB
 Shift+ESC:Exit group CLOSE all open positions (all orders must be cancelled first):PANIC
 
 =:Shorts locale:NewWindow ShortLocate
-\:Finviz:http://finviz.com/quote.ashx?t=%SYMB%
+-:Finviz:http://finviz.com/quote.ashx?t=%SYMB%
 
 Home:Chart management Toggle drag mode:ToggleDragMode
 End:Chart management Trigger Extended trading hours:ShowPreAftMkt
@@ -43,12 +43,12 @@ PageDown:Chart management HorizontalLine:HorizontalLine
 Ctrl+TAB:ShowTitleBar:ShowTitleBar
 Shift+TAB:HideTitleBar:HideTitleBar
 
-Ctrl+C:Close MID PRICE 1/4 pos:DefShare=Share;CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos*.25;Route=LIMIT;Send=Reverse;Share=DefShare
-Ctrl+X:Close MID PRICE 1/2 pos:DefShare=Share;CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos*.5;Route=LIMIT;Send=Reverse;Share=DefShare
-Ctrl+Z:Close MID PRICE pos:DefShare=Share;CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos;Route=LIMIT;Send=Reverse;Share=DefShare
-Ctrl+Shift+C:Close MARKET 1/4 pos:DefShare=Share;CXL ALLSYMB;Share=Pos*.25;Route=MARKET;Send=Reverse;Route=LIMIT;Share=DefShare
-Ctrl+Shift+X:Close MARKET 1/2 pos:DefShare=Share;CXL ALLSYMB;Share=Pos*.5;Route=MARKET;Send=Reverse;Route=LIMIT;Share=DefShare
-Ctrl+Shift+Z:Close MARKET pos:DefShare=Share;CXL ALLSYMB;Share=Pos;Route=MARKET;Send=Reverse;Route=LIMIT;Share=DefShare
+Ctrl+C:Close MID PRICE 1/4 pos:DefShare=Share;CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos*.25;Route=$TRADE_ROUTE;Send=Reverse;Share=DefShare
+Ctrl+X:Close MID PRICE 1/2 pos:DefShare=Share;CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos*.5;Route=$TRADE_ROUTE;Send=Reverse;Share=DefShare
+Ctrl+Z:Close MID PRICE pos:DefShare=Share;CXL ALLSYMB;Price=Bid+Ask;Price=Price/2;Price=Round2;Share=Pos;Route=$TRADE_ROUTE;Send=Reverse;Share=DefShare
+Ctrl+Shift+C:Close MARKET 1/4 pos:DefShare=Share;CXL ALLSYMB;Share=Pos*.25;Route=MARKET;Send=Reverse;Route=$TRADE_ROUTE;Share=DefShare
+Ctrl+Shift+X:Close MARKET 1/2 pos:DefShare=Share;CXL ALLSYMB;Share=Pos*.5;Route=MARKET;Send=Reverse;Route=$TRADE_ROUTE;Share=DefShare
+Ctrl+Shift+Z:Close MARKET pos:DefShare=Share;CXL ALLSYMB;Share=Pos;Route=MARKET;Send=Reverse;Route=$TRADE_ROUTE;Share=DefShare
 
 Ctrl+Q:Offset Buy (TakeProfit) Bid -.05:Price=Bid-.05;Share=Share;BUY=Send
 Ctrl+W:Offset Buy (TakeProfit) Bid -.10:Price=Bid-.10;Share=Share;BUY=Send
@@ -76,8 +76,8 @@ Ctrl+L:Sell Stop loss  Ask -.50:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Mark
 Ctrl+K:Sell Stop loss  Ask   -1:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-1;Share=Pos;SELL=Send;
 Ctrl+J:Sell Stop loss  Ask   -3:CXL BELOWAVGCOST;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-3;Share=Pos;SELL=Send;
 
-Ctrl+KeyUp:Buy Bid and Add TakeProfit order 05 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:LIMIT PX:AvgCost2+0.05 ACT:SELL QTY:Share TIF:DAY+
-Alt+Ctrl+KeyUp:Buy Bid and Add TakeProfit order 10 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:LIMIT PX:AvgCost2+0.10 ACT:SELL QTY:Share TIF:DAY+
+Ctrl+KeyUp:Buy Bid and Add TakeProfit order 05 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost2+0.05 ACT:SELL QTY:Share TIF:DAY+
+Alt+Ctrl+KeyUp:Buy Bid and Add TakeProfit order 10 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost2+0.10 ACT:SELL QTY:Share TIF:DAY+
 
-Ctrl+KeyDown:Sell Ask and Add TakeProfit order 05 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:LIMIT PX:AvgCost2-0.05 ACT:BUY QTY:Share TIF:DAY+
-Alt+Ctrl+KeyDown:Sell Ask and Add TakeProfit order 10 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:LIMIT PX:AvgCost2-0.10 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+KeyDown:Sell Ask and Add TakeProfit order 05 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost2-0.05 ACT:BUY QTY:Share TIF:DAY+
+Alt+Ctrl+KeyDown:Sell Ask and Add TakeProfit order 10 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost2-0.10 ACT:BUY QTY:Share TIF:DAY+
