@@ -68,8 +68,8 @@ Ctrl+D:Buy Stop loss  Bid +.50:CXL ABOVEAVGCOST;DefShare=Share;ROUTE=$STOP_ROUTE
 Ctrl+F:Buy Stop loss  Bid   +1:CXL ABOVEAVGCOST;DefShare=Share;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+1;Share=Pos;BUY=Send;Route=$TRADE_ROUTE;Share=DefShare
 Ctrl+G:Buy Stop loss  Bid   +3:CXL ABOVEAVGCOST;DefShare=Share;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Bid+3;Share=Pos;BUY=Send;Route=$TRADE_ROUTE;Share=DefShare
 
-`:Sell Stop loss Breakeven:CXL BELOWAVGCOST;DefShare=Share;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=AvgCost;Share=Pos;SELL=Send;Route=$TRADE_ROUTE;Share=DefShare
-;:Sell Stop loss  Ask -.20:CXL BELOWAVGCOST;DefShare=Share;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-.20;Share=Pos;SELL=Send;Route=$TRADE_ROUTE;Share=DefShare
+Ctrl+`:Sell Stop loss Breakeven:CXL BELOWAVGCOST;DefShare=Share;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=AvgCost;Share=Pos;SELL=Send;Route=$TRADE_ROUTE;Share=DefShare
+Ctrl+;:Sell Stop loss  Ask -.20:CXL BELOWAVGCOST;DefShare=Share;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-.20;Share=Pos;SELL=Send;Route=$TRADE_ROUTE;Share=DefShare
 Ctrl+L:Sell Stop loss  Ask -.50:CXL BELOWAVGCOST;DefShare=Share;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-.50;Share=Pos;SELL=Send;Route=$TRADE_ROUTE;Share=DefShare
 Ctrl+K:Sell Stop loss  Ask   -1:CXL BELOWAVGCOST;DefShare=Share;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-1;Share=Pos;SELL=Send;Route=$TRADE_ROUTE;Share=DefShare
 Ctrl+J:Sell Stop loss  Ask   -3:CXL BELOWAVGCOST;DefShare=Share;ROUTE=$STOP_ROUTE;StopType=Market;StopPrice=Ask-3;Share=Pos;SELL=Send;Route=$TRADE_ROUTE;Share=DefShare
