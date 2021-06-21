@@ -1,5 +1,5 @@
 SWBI >24 => moon
-TRCH >7 => moon
+TRCH >7 => moon => parabolic
 ALF >7 => moon
 BNL 27 => moon, active lateday
 GMAB >45 => moon
@@ -9,6 +9,7 @@ CTRX correction?
 AMC
 AMD
 MRNA
+NIO
 
 PENN slow, snp500, 74 resistance
 SPCE >39 or <34
@@ -24,3 +25,10 @@ LEDS
 BPT local resist 6
 RAPT low vol!
 
+WISH
+APM
+HOL
+
+AHT bleeding
+X bleeding
+CLF bleeding
