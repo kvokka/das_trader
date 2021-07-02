@@ -47,36 +47,49 @@ Ctrl+Shift+C:Close MARKET 1/4 pos:DefShare=Share;CXL ALLSYMB;Share=Pos*.25;Route
 Ctrl+Shift+X:Close MARKET 1/2 pos:DefShare=Share;CXL ALLSYMB;Share=Pos*.5;Route=MARKET;Send=Reverse;Route=$TRADE_ROUTE;Share=DefShare
 Ctrl+Shift+Z:Close MARKET pos:DefShare=Share;CXL ALLSYMB;Share=Pos;Route=MARKET;Send=Reverse;Route=$TRADE_ROUTE;Share=DefShare
 
-Ctrl+Q:Offset Buy (TakeProfit) Bid -.05:Price=Bid-.05;Share=Share;BUY=Send
-Ctrl+W:Offset Buy (TakeProfit) Bid -.10:Price=Bid-.10;Share=Share;BUY=Send
-Ctrl+E:Offset Buy (TakeProfit) Bid -.20:Price=Bid-.20;Share=Share;BUY=Send
-Ctrl+R:Offset Buy (TakeProfit) Bid -.50:Price=Bid-.50;Share=Share;BUY=Send
-Ctrl+T:Offset Buy (TakeProfit) Bid   -1:Price=Bid-1;Share=Share;BUY=Send
-Ctrl+Y:Offset Buy (TakeProfit) Bid   -3:Price=Bid-2;Share=Share;BUY=Send
+Ctrl+Q:Long 10c Range order at 2to1 risk:ROUTE=$TRADE_ROUTE;Share=Share;TIF=DAY+;BUY=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-.10 HighPrice:AvgCost2+.20 ACT:SELL QTY:Share TIF:DAY+
+Ctrl+W:Long 20c Range order at 2to1 risk:ROUTE=$TRADE_ROUTE;Share=Share;TIF=DAY+;BUY=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-.20 HighPrice:AvgCost2+.40 ACT:SELL QTY:Share TIF:DAY+
+Ctrl+E:Long 50c Range order at 2to1 risk:ROUTE=$TRADE_ROUTE;Share=Share;TIF=DAY+;BUY=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-.50 HighPrice:AvgCost2+1 ACT:SELL QTY:Share TIF:DAY+
+Ctrl+R:Long  1$ Range order at 2to1 risk:ROUTE=$TRADE_ROUTE;Share=Share;TIF=DAY+;BUY=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-1 HighPrice:AvgCost2+2 ACT:SELL QTY:Share TIF:DAY+
+Ctrl+T:Long  3$ Range order at 2to1 risk:ROUTE=$TRADE_ROUTE;Share=Share;TIF=DAY+;BUY=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-3 HighPrice:AvgCost2+6 ACT:SELL QTY:Share TIF:DAY+
 
-Ctrl+]:Offset Sell (TakeProfit) Ask +.05:Price=Ask+.05;Share=Share;SELL=Send
-Ctrl+[:Offset Sell (TakeProfit) Ask +.10:Price=Ask+.10;Share=Share;SELL=Send
-Ctrl+P:Offset Sell (TakeProfit) Ask +.20:Price=Ask+.20;Share=Share;SELL=Send
-Ctrl+O:Offset Sell (TakeProfit) Ask +.50:Price=Ask+.50;Share=Share;SELL=Send
-Ctrl+I:Offset Sell (TakeProfit) Ask   +1:Price=Ask+1;Share=Share;SELL=Send
-Ctrl+U:Offset Sell (TakeProfit) Ask   +3:Price=Ask+3;Share=Share;SELL=Send
+Ctrl+Shift+Q:Long 10c Range order on L2Bid at 2to1 risk:ROUTE=$TRADE_ROUTE;Price=L2Bid;Share=Share;TIF=DAY+;BUY=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-.10 HighPrice:AvgCost2+.20 ACT:SELL QTY:Share TIF:DAY+
+Ctrl+Shift+W:Long 20c Range order on L2Bid at 2to1 risk:ROUTE=$TRADE_ROUTE;Price=L2Bid;Share=Share;TIF=DAY+;BUY=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-.20 HighPrice:AvgCost2+.40 ACT:SELL QTY:Share TIF:DAY+
+Ctrl+Shift+E:Long 50c Range order on L2Bid at 2to1 risk:ROUTE=$TRADE_ROUTE;Price=L2Bid;Share=Share;TIF=DAY+;BUY=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-.50 HighPrice:AvgCost2+1 ACT:SELL QTY:Share TIF:DAY+
+Ctrl+Shift+R:Long  1$ Range order on L2Bid at 2to1 risk:ROUTE=$TRADE_ROUTE;Price=L2Bid;Share=Share;TIF=DAY+;BUY=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-1 HighPrice:AvgCost2+2 ACT:SELL QTY:Share TIF:DAY+
+Ctrl+Shift+T:Long  3$ Range order on L2Bid at 2to1 risk:ROUTE=$TRADE_ROUTE;Price=L2Bid;Share=Share;TIF=DAY+;BUY=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-3 HighPrice:AvgCost2+6 ACT:SELL QTY:Share TIF:DAY+
 
-Ctrl+A:Buy and Add TakeProfit order 10 cents above:BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost+0.10 ACT:SELL QTY:Share TIF:DAY+
-Ctrl+S:Buy and Add TakeProfit order 20 cents above:BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost+0.20 ACT:SELL QTY:Share TIF:DAY+
-Ctrl+D:Buy and Add TakeProfit order 50 cents above:BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost+0.50 ACT:SELL QTY:Share TIF:DAY+
-Ctrl+F:Buy and Add TakeProfit order 1$ cents above:BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost+1 ACT:SELL QTY:Share TIF:DAY+
-Ctrl+G:Buy and Add TakeProfit order 2$ cents above:BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost+2 ACT:SELL QTY:Share TIF:DAY+
+Ctrl+Shift+]:Short 10c Range order on L2Ask at 2to1 risk:ROUTE=$TRADE_ROUTE;Price=L2Ask;Share=Share;TIF=DAY+;Sell=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-.10 HighPrice:AvgCost2+.20 ACT:Buy QTY:Share TIF:DAY+
+Ctrl+Shift+[:Short 20c Range order on L2Ask at 2to1 risk:ROUTE=$TRADE_ROUTE;Price=L2Ask;Share=Share;TIF=DAY+;Sell=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-.20 HighPrice:AvgCost2+.40 ACT:Buy QTY:Share TIF:DAY+
+Ctrl+Shift+P:Short 50c Range order on L2Ask at 2to1 risk:ROUTE=$TRADE_ROUTE;Price=L2Ask;Share=Share;TIF=DAY+;Sell=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-.50 HighPrice:AvgCost2+1 ACT:Buy QTY:Share TIF:DAY+
+Ctrl+Shift+O:Short  1$ Range order on L2Ask at 2to1 risk:ROUTE=$TRADE_ROUTE;Price=L2Ask;Share=Share;TIF=DAY+;Sell=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-1 HighPrice:AvgCost2+3 ACT:Buy QTY:Share TIF:DAY+
+Ctrl+Shift+I:Short  3$ Range order on L2Ask at 2to1 risk:ROUTE=$TRADE_ROUTE;Price=L2Ask;Share=Share;TIF=DAY+;Sell=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-3 HighPrice:AvgCost2+6 ACT:Buy QTY:Share TIF:DAY+
 
-Ctrl+`:Sell and Add TakeProfit order 10 cents above:BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost-0.10 ACT:BUY QTY:Share TIF:DAY+
-Ctrl+;:Sell and Add TakeProfit order 20 cents above:BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost-0.20 ACT:BUY QTY:Share TIF:DAY+
-Ctrl+L:Sell and Add TakeProfit order 50 cents above:BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost-0.50 ACT:BUY QTY:Share TIF:DAY+
-Ctrl+K:Sell and Add TakeProfit order 1$ cents above:BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost-1 ACT:BUY QTY:Share TIF:DAY+
-Ctrl+J:Sell and Add TakeProfit order 2$ cents above:BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost-2 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+]:Short 10c Range order on L2Ask at 2to1 risk:ROUTE=$TRADE_ROUTE;Share=Share;TIF=DAY+;Sell=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-.10 HighPrice:AvgCost2+.20 ACT:Buy QTY:Share TIF:DAY+
+Ctrl+[:Short 20c Range order on L2Ask at 2to1 risk:ROUTE=$TRADE_ROUTE;Share=Share;TIF=DAY+;Sell=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-.20 HighPrice:AvgCost2+.40 ACT:Buy QTY:Share TIF:DAY+
+Ctrl+P:Short 50c Range order on L2Ask at 2to1 risk:ROUTE=$TRADE_ROUTE;Share=Share;TIF=DAY+;Sell=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-.50 HighPrice:AvgCost2+1 ACT:Buy QTY:Share TIF:DAY+
+Ctrl+O:Short  1$ Range order on L2Ask at 2to1 risk:ROUTE=$TRADE_ROUTE;Share=Share;TIF=DAY+;Sell=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-1 HighPrice:AvgCost2+3 ACT:Buy QTY:Share TIF:DAY+
+Ctrl+I:Short  3$ Range order on L2Ask at 2to1 risk:ROUTE=$TRADE_ROUTE;Share=Share;TIF=DAY+;Sell=Send;TriggerOrder=RT:STOP STOPTYPE:RANGE LowPrice:AvgCost2-3 HighPrice:AvgCost2+6 ACT:Buy QTY:Share TIF:DAY+
 
-Ctrl+KeyUp:Buy Bid and Add TakeProfit order 10 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost+0.10 ACT:SELL QTY:Share TIF:DAY+
-Alt+Ctrl+KeyUp:Buy Bid and Add TakeProfit order 20 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost+0.20 ACT:SELL QTY:Share TIF:DAY+
-Alt+Ctrl+Shift+KeyUp:Buy Bid and Add TakeProfit order 50 cents above:Price=Bid;BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost+0.50 ACT:SELL QTY:Share TIF:DAY+
 
-Ctrl+KeyDown:Sell Ask and Add TakeProfit order 10 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost-0.10 ACT:BUY QTY:Share TIF:DAY+
-Alt+Ctrl+KeyDown:Sell Ask and Add TakeProfit order 20 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost-0.20 ACT:BUY QTY:Share TIF:DAY+
-Alt+Ctrl+Shift+KeyDown:Sell Ask and Add TakeProfit order 50 cents below:Price=Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost-0.50 ACT:BUY QTY:Share TIF:DAY+
+
+Ctrl+A:Buy OCO 10c up/down:Share=Pos;Route=Stop;StopType=Range;LowPrice=StopPrice-.10;HighPrice=Price+.10;TIF=DAY+;BUY=Send;ROUTE=$TRADE_ROUTE
+Ctrl+S:Buy OCO 20c up/down:Share=Pos;Route=Stop;StopType=Range;LowPrice=StopPrice-.20;HighPrice=Price+.20;TIF=DAY+;BUY=Send;ROUTE=$TRADE_ROUTE
+Ctrl+D:Buy OCO 50c up/down:Share=Pos;Route=Stop;StopType=Range;LowPrice=StopPrice-.50;HighPrice=Price+.50;TIF=DAY+;BUY=Send;ROUTE=$TRADE_ROUTE
+Ctrl+F:Buy OCO  1$ up/down:Share=Pos;Route=Stop;StopType=Range;LowPrice=StopPrice-1;HighPrice=Price+1;TIF=DAY+;BUY=Send;ROUTE=$TRADE_ROUTE
+Ctrl+G:Buy OCO  3$ up/down:Share=Pos;Route=Stop;StopType=Range;LowPrice=StopPrice-3;HighPrice=Price+3;TIF=DAY+;BUY=Send;ROUTE=$TRADE_ROUTE
+
+Ctrl+`:Sell OCO 10c up/down:Share=Pos;Route=Stop;StopType=Range;LowPrice=StopPrice-.10;HighPrice=Price+.10;TIF=DAY+;SELL=Send;ROUTE=$TRADE_ROUTE
+Ctrl+;:Sell OCO 20c up/down:Share=Pos;Route=Stop;StopType=Range;LowPrice=StopPrice-.20;HighPrice=Price+.20;TIF=DAY+;SELL=Send;ROUTE=$TRADE_ROUTE
+Ctrl+L:Sell OCO 50c up/down:Share=Pos;Route=Stop;StopType=Range;LowPrice=StopPrice-.50;HighPrice=Price+.50;TIF=DAY+;SELL=Send;ROUTE=$TRADE_ROUTE
+Ctrl+K:Sell OCO  1$ up/down:Share=Pos;Route=Stop;StopType=Range;LowPrice=StopPrice-1;HighPrice=Price+1;TIF=DAY+;SELL=Send;ROUTE=$TRADE_ROUTE
+Ctrl+J:Sell OCO  3$ up/down:Share=Pos;Route=Stop;StopType=Range;LowPrice=StopPrice-3;HighPrice=Price+3;TIF=DAY+;SELL=Send;ROUTE=$TRADE_ROUTE
+
+
+Ctrl+KeyUp:Buy Bid and Add TakeProfit order 10 cents above:Price=L2Bid;BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost+0.10 ACT:SELL QTY:Share TIF:DAY+
+Alt+Ctrl+KeyUp:Buy Bid and Add TakeProfit order 20 cents above:Price=L2Bid;BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost+0.20 ACT:SELL QTY:Share TIF:DAY+
+Alt+Ctrl+Shift+KeyUp:Buy Bid and Add TakeProfit order 50 cents above:Price=L2Bid;BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost+0.50 ACT:SELL QTY:Share TIF:DAY+
+
+Ctrl+KeyDown:Sell Ask and Add TakeProfit order 10 cents below:Price=L2Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost-0.10 ACT:BUY QTY:Share TIF:DAY+
+Alt+Ctrl+KeyDown:Sell Ask and Add TakeProfit order 20 cents below:Price=L2Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost-0.20 ACT:BUY QTY:Share TIF:DAY+
+Alt+Ctrl+Shift+KeyDown:Sell Ask and Add TakeProfit order 50 cents below:Price=L2Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:AvgCost-0.50 ACT:BUY QTY:Share TIF:DAY+
