@@ -1,0 +1,51 @@
+MTSL slow parabolic
+SAVA slow parabolic
+ANY slow parabolic
+
+SGOC unwind
+TPST unwind
+LHDX unwind
+
+MOXC
+VTSI
+
+AMC
+SPCE
+NIO
+
+CERE
+CARV
+CLOV
+
+MRIN
+BLIN
+NEGG
+
+MARA
+
+MXC staying familiar
+FWP staying familiar
+SQFT staying familiar
+
+TAL staying familiar
+
+AAPL ATH
+ADBE ATH
+MSFT ATH
+AMT
+ASAN ATH
+NKE ATH
+CVNA
+EBAY
+FLS
+GDS
+LLY
+OKE
+PDD
+PYPL
+ZTS
+WELL
+TT
+PAYX
+
+
