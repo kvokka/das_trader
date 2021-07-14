@@ -7,6 +7,10 @@ TPST unwind
 LHDX unwind
 
 MDIA Monday runner
+AHPI Tuesday runner
+RCAT Tuesday runner
+OSAT Tuesday runner
+PLXP Tuesday runner
 
 MOXC
 VTSI
