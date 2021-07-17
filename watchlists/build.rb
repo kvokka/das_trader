@@ -1,7 +1,12 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require 'fileutils'
+require 'ostruct'
+require 'pathname'
+
 require_relative 'loader'
+require_relative 'alerts_creator'
 
 # Empty watchlist creation is a little fuck in DAS
 # So let's create a template for it
@@ -20,10 +25,14 @@ def generate_csv(watchlist)
   end
 end
 
+def all_watchlists
+  @all_watchlists ||= CsvLoader.new(INPUT_PATH).call
+end
+
 generate_csv('empty') { |csv| 100.times { csv << Array.new(COLUMNS.size) } }
 
-CsvLoader.new(INPUT_PATH).call.each do |watchlist, lines|
-  generate_csv(watchlist) do |csv|
+all_watchlists.each do |file_desc, lines|
+  generate_csv(file_desc.watchlist) do |csv|
     lines.each do |line|
       csv << Array.new(COLUMNS.size).tap do |result|
         result[COLUMNS.index('Symbol')] = line.symbol&.upcase if COLUMNS.index('Symbol')
@@ -32,3 +41,5 @@ CsvLoader.new(INPUT_PATH).call.each do |watchlist, lines|
     end
   end
 end
+
+AlertsCreator.new(all_watchlists).call

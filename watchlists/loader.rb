@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require 'csv'
-require 'pathname'
-require 'fileutils'
 
 # Load and parse provided text files
 class CsvLoader
@@ -32,17 +30,25 @@ class CsvLoader
   end
 
   def call
+    # Note that on Windows (NTFS), returns creation time (birth time).
     Dir[path.join('*')].each do |file|
-      watchlist = File.basename(file, File.extname(file))
-
-      File.open(file, 'r').each do |line|
-        loaded[watchlist] << build_line(line, watchlist)
+      file_desc(file).tap do |file_desc|
+        File.open(file, 'r').each do |line|
+          loaded[file_desc] << build_line(line, file_desc.watchlist)
+        end
       end
     end
-    loaded
+    loaded.select { |k, _| k }
   end
 
   private
+
+  def file_desc(file)
+    OpenStruct.new({
+                     name: File.basename(file, File.extname(file)),
+                     updated_at: File.ctime(file)
+                   })
+  end
 
   def build_line(line, watchlist)
     symbol, *user_notes = line.split

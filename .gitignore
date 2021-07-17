@@ -2,3 +2,4 @@ hotkeys/.env
 hotkeys/output/
 watchlists/.env
 watchlists/output/
+*/tmp/

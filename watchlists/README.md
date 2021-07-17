@@ -13,6 +13,22 @@ AAPL
 TSLA when the moon is in 3rd phase you should dump it, otherwise avoid buying
 ```
 
+## Alerts
+
+For user comments in the last updated watchlists file, which match Regex
+alerts will be added for supported actions:
+
+* `A` L1 Ask price
+* `B` L1 Bid price
+* `L` Last trade price
+* `V` Volume traded
+
+Examples:
+
+* `MyComment A > 42.15, V>= 1000000`
+* `L <= 10 Dump it!`
+* `Sell L<  30 Buy A > 40`
+
 ## Dependencies
 
 * Ruby 2.7.2
