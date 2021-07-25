@@ -4,6 +4,8 @@
 class AlertsCreator
   attr_reader :file_desc, :lines
 
+  SUPPORTED_ALERTS = %w[A B L V].freeze
+
   def initialize(all_watchlists)
     @file_desc, @lines = all_watchlists.max_by { |k, _v| k.updated_at }
     @lines = @lines.dup.select { |l| l.user_notes && l.symbol }
@@ -26,7 +28,7 @@ class AlertsCreator
 
   def process_lines
     lines.each do |line|
-      alerts = line.user_notes.scan(/([ABLV]\s*([>|<]=?\s*\d+\.?\d*|=\s*\d+\.?\d*))/)
+      alerts = line.user_notes.scan(%r[([#{SUPPORTED_ALERTS.join}]?\s*([>|<]=?\s*\d+\.?\d*|=\s*\d+\.?\d*))])
       next if alerts.empty?
 
       alert_name = "From #{@file_desc.name} #{line.symbol.upcase} - #{line.user_notes}"
@@ -56,6 +58,7 @@ class AlertsCreator
   def raw_alerts(alerts:)
     alerts.map(&:first)
           .map do |a|
+            a = "L#{a}" unless SUPPORTED_ALERTS.include?(a.chr)
       a.gsub(/\s*/, '').sub(/<=/, '2').sub(/>=/, '5').sub(/=/, '3').sub(/</, '1').sub(/>/, '4')
     end.join(',')
   end
