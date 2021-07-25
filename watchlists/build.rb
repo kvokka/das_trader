@@ -32,7 +32,7 @@ end
 generate_csv('empty') { |csv| 100.times { csv << Array.new(COLUMNS.size) } }
 
 all_watchlists.each do |file_desc, lines|
-  generate_csv(file_desc.watchlist) do |csv|
+  generate_csv(file_desc.name) do |csv|
     lines.each do |line|
       csv << Array.new(COLUMNS.size).tap do |result|
         result[COLUMNS.index('Symbol')] = line.symbol&.upcase if COLUMNS.index('Symbol')
