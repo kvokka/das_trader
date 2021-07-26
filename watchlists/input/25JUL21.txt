@@ -32,3 +32,12 @@ NRXP last Friday runner
 NURO drain?
 
 WISA nath,10m offering,
+NAOV runner
+
+CCL nice range
+NCLH nice range
+
+SCKT failed
+IGC failed
+CEMI failed
+IPA failed
