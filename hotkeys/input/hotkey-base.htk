@@ -96,17 +96,17 @@ Ctrl+Shift+D:Buy and Add TakeProfit order 50 cents above:Price=L2Bid;BUY=Send;Tr
 Ctrl+Shift+F:Buy and Add TakeProfit order 1$       above:Price=L2Bid;BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Ask+1 ACT:SELL QTY:Share TIF:DAY+
 Ctrl+Shift+G:Buy and Add TakeProfit order 2$       above:Price=L2Bid;BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Ask+2 ACT:SELL QTY:Share TIF:DAY+
 
-Ctrl+`:Sell and Add TakeProfit order 10 cents above:BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-0.10 ACT:BUY QTY:Share TIF:DAY+
-Ctrl+;:Sell and Add TakeProfit order 20 cents above:BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-0.20 ACT:BUY QTY:Share TIF:DAY+
-Ctrl+L:Sell and Add TakeProfit order 50 cents above:BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-0.50 ACT:BUY QTY:Share TIF:DAY+
-Ctrl+K:Sell and Add TakeProfit order 1$       above:BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-1 ACT:BUY QTY:Share TIF:DAY+
-Ctrl+J:Sell and Add TakeProfit order 2$       above:BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-2 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+`:Sell and Add TakeProfit order 10 cents above:SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-0.10 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+;:Sell and Add TakeProfit order 20 cents above:SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-0.20 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+L:Sell and Add TakeProfit order 50 cents above:SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-0.50 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+K:Sell and Add TakeProfit order 1$       above:SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-1 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+J:Sell and Add TakeProfit order 2$       above:SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-2 ACT:BUY QTY:Share TIF:DAY+
 
-Ctrl+Shift+`:Sell and Add TakeProfit order 10 cents above:Price=L2Ask;BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-0.10 ACT:BUY QTY:Share TIF:DAY+
-Ctrl+Shift+;:Sell and Add TakeProfit order 20 cents above:Price=L2Ask;BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-0.20 ACT:BUY QTY:Share TIF:DAY+
-Ctrl+Shift+L:Sell and Add TakeProfit order 50 cents above:Price=L2Ask;BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-0.50 ACT:BUY QTY:Share TIF:DAY+
-Ctrl+Shift+K:Sell and Add TakeProfit order 1$       above:Price=L2Ask;BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-1 ACT:BUY QTY:Share TIF:DAY+
-Ctrl+Shift+J:Sell and Add TakeProfit order 2$       above:Price=L2Ask;BUY=Send;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-2 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+Shift+`:Sell and Add TakeProfit order 10 cents above:Price=L2Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-0.10 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+Shift+;:Sell and Add TakeProfit order 20 cents above:Price=L2Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-0.20 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+Shift+L:Sell and Add TakeProfit order 50 cents above:Price=L2Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-0.50 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+Shift+K:Sell and Add TakeProfit order 1$       above:Price=L2Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-1 ACT:BUY QTY:Share TIF:DAY+
+Ctrl+Shift+J:Sell and Add TakeProfit order 2$       above:Price=L2Ask;SELL=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Bid-2 ACT:BUY QTY:Share TIF:DAY+
 
 Ctrl+KeyUp:Buy Bid and Add TakeProfit order 10 cents above:Price=L2Bid;BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Ask+0.10 ACT:SELL QTY:Share TIF:DAY+
 Alt+Ctrl+KeyUp:Buy Bid and Add TakeProfit order 20 cents above:Price=L2Bid;BUY=Send;TriggerOrder=RT:$TRADE_ROUTE PX:L2Ask+0.20 ACT:SELL QTY:Share TIF:DAY+
