@@ -6,6 +6,7 @@ require 'ostruct'
 require 'pathname'
 
 require_relative 'loader'
+require_relative 'das_config'
 require_relative 'alerts_creator'
 
 # Empty watchlist creation is a little fuck in DAS
@@ -43,3 +44,4 @@ all_watchlists.each do |file_desc, lines|
 end
 
 AlertsCreator.new(all_watchlists).call
+Das.instance.update!
