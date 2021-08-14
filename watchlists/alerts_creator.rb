@@ -6,8 +6,12 @@ class AlertsCreator
 
   SUPPORTED_ALERTS = %w[A B L V].freeze
 
-  def initialize(all_watchlists)
-    @file_desc, @lines = all_watchlists.max_by { |k, _v| k.updated_at }
+  def self.call
+    new.call
+  end
+
+  def initialize
+    @file_desc, @lines = Loader.loaded.max_by { |k, _v| k&.updated_at || Time.new(0) }
     @lines = @lines.dup.select { |l| l.user_notes && l.symbol }
   end
 
@@ -31,7 +35,7 @@ class AlertsCreator
     end
   end
 
-  # It translate the alert to DAS digestable format.
+  # It translate the alert to DAS digestible format.
   # Each alert is described with this pattern
   #
   #   B3500  means:

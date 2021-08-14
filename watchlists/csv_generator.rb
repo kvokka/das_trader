@@ -7,7 +7,7 @@ class CsvGenerator
 
   class << self
     def generate_from_file_desc(file_desc, lines)
-      return if file_desc.virtual
+      return if !file_desc || file_desc.virtual_watchlist_number
 
       generate(file_desc.name) do |csv|
         lines.each do |line|

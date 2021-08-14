@@ -5,8 +5,8 @@ require 'fileutils'
 require 'ostruct'
 require 'pathname'
 
-require_relative 'csv_loader'
-require_relative 'das_config'
+require_relative 'loader'
+require_relative 'das'
 require_relative 'alerts_creator'
 require_relative 'csv_generator'
 
@@ -15,9 +15,10 @@ FileUtils.mkdir_p(OUTPUT_PATH = Pathname.new(ENV.fetch('OUTPUT_PATH', 'output'))
 
 CsvGenerator.generate_empty
 
-all_watchlists = CsvLoader.new(INPUT_PATH).call
+Loader.new(INPUT_PATH).call
 
-all_watchlists.each { |file_desc, lines| CsvGenerator.generate_from_file_desc file_desc, lines }
+Loader.loaded.each { |file_desc, lines| CsvGenerator.generate_from_file_desc file_desc, lines }
 
-AlertsCreator.new(all_watchlists).call
+AlertsCreator.call
+VirtualWatchlistsLoader.update_config
 Das.instance.update!

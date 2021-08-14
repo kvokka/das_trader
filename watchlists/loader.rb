@@ -3,8 +3,10 @@
 require 'csv'
 require 'finviz'
 
+require_relative 'virtual_watchlists_loader'
+
 # Load and parse provided text files
-class CsvLoader
+class Loader
   # One parsed line representation
   class Line
     attr_reader :symbol, :raw_user_notes
@@ -33,14 +35,32 @@ class CsvLoader
   WEEK_BEFORE = Date.today - 7
   WEEK_AFTER = Date.today + 7
 
-  attr_reader :path, :loaded
+  class << self
+    def loaded
+      @loaded ||= Hash.new { |h, k| h[k] = [] }
+    end
+  end
+
+  attr_reader :path
 
   def initialize(path)
     @path = path
-    @loaded = Hash.new { |h, k| h[k] = [] }
   end
 
   def call
+    load_real_watchlists
+    VirtualWatchlistsLoader.load
+    add_fundamental_user_notes
+    loaded.select { |k, _| k }
+  end
+
+  private
+
+  def loaded
+    self.class.loaded
+  end
+
+  def load_real_watchlists
     # Note that on Windows (NTFS), returns creation time (birth time).
     Dir[path.join('*')].each do |file|
       file_desc(file).tap do |file_desc|
@@ -49,11 +69,7 @@ class CsvLoader
         end
       end
     end
-    add_fundamental_user_notes
-    loaded.select { |k, _| k }
   end
-
-  private
 
   def file_desc(file)
     OpenStruct.new({
@@ -119,7 +135,6 @@ class CsvLoader
     month, date, *_ = quote.stats["Earnings"].to_s.split(' ')
 
     return unless date
-
 
     range = Date.new(
         WEEK_BEFORE.year,WEEK_BEFORE.month,WEEK_BEFORE.day
