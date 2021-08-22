@@ -11,7 +11,7 @@ class Loader
   class Line
     attr_reader :symbol, :raw_user_notes
 
-    def initialize(symbol:, raw_user_notes: [])
+    def initialize(symbol: nil, raw_user_notes: [])
       @symbol, @raw_user_notes = symbol&.downcase, raw_user_notes
     end
 

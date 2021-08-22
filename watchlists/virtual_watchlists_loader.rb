@@ -1,9 +1,11 @@
 class VirtualWatchlistsLoader
   # here is the spot where desired watchlists should be defined
   WATCHLISTS = [
-    OpenStruct.new(name: '52wHi', virtual_watchlist_number: 1, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,ta_averagetruerange_o0.5,ta_highlow52w_nh,ta_volatility_wo3&ft=4&o=ticker'),
+    OpenStruct.new(name: '50dHi', virtual_watchlist_number: 1, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_averagetruerange_o0.5,ta_highlow50d_nh&ft=4&o=ticker'),
+    OpenStruct.new(name: '50dHi_0-3%', virtual_watchlist_number: 1, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_averagetruerange_o0.5,ta_highlow50d_b0to3h&ft=4&o=ticker'),
     OpenStruct.new(name: 'TodayHi5', virtual_watchlist_number: 2, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_perf2_d5o&ft=4&o=ticker'),
     OpenStruct.new(name: '50dLow', virtual_watchlist_number: 11, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_averagetruerange_o0.5,ta_highlow50d_nl,ta_volatility_wo3&ft=4&o=ticker'),
+    OpenStruct.new(name: '50dLow_0-3%', virtual_watchlist_number: 11, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_averagetruerange_o0.5,ta_highlow50d_a0to3h&ft=4&o=ticker'),
     OpenStruct.new(name: 'TodayLo5', virtual_watchlist_number: 12, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_perf2_d5u&ft=4&o=ticker'),
   ]
 
@@ -14,8 +16,10 @@ class VirtualWatchlistsLoader
     def load
       WATCHLISTS.each do |wl|
         Finviz.tickers(uri: wl.url).each do |symbol|
-          ::Loader.loaded[wl] << Loader::Line.new(symbol: symbol, raw_user_notes: [wl.name.dup])
+          l = Loader::Line.new(symbol: symbol, raw_user_notes: [wl.name.dup])
+          ::Loader.loaded[wl].include?(l) || (::Loader.loaded[wl] << l)
         end
+        ::Loader.loaded[wl] << Loader::Line.new
       end
     end
 
@@ -37,10 +41,8 @@ class VirtualWatchlistsLoader
         Das.instance.config << "MKTVIEW#{wl_number}:COLWID:#{COLUMNS_WIDTHS_SETTINGS}\r\n"
 
         lines.each_with_index do |line, index|
-          next unless line.symbol
-
-          Das.instance.config << "MKTMDSYM#{wl_number}:#{'%03d' % index}:#{line.symbol.upcase}\r\n"
-          Das.instance.config << "MKTUSERNOTES#{wl_number}:#{'%03d' % index}:#{line.user_notes}\r\n"
+          Das.instance.config << "MKTMDSYM#{wl_number}:#{'%03d' % index}:#{line.symbol.to_s.upcase}\r\n"
+          Das.instance.config << "MKTUSERNOTES#{wl_number}:#{'%03d' % index}:#{line.user_notes || 0}\r\n"
         end
       end
     end
