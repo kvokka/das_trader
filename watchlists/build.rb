@@ -4,6 +4,7 @@
 require 'fileutils'
 require 'ostruct'
 require 'pathname'
+require 'pry'
 
 require_relative 'loader'
 require_relative 'das'
