@@ -16,11 +16,11 @@ class Loader
     end
 
     def <=>(other)
-      symbol.to_s <=> other.to_s
+      symbol.to_s <=> other.symbol.to_s
     end
 
     def ==(other)
-      symbol == other
+      symbol.to_s == other.symbol.to_s
     end
 
     def user_notes
