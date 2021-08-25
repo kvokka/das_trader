@@ -1,31 +1,42 @@
-DOCS
-NVDA
-XLNX
-STVN
-MXIM
-BBWI
-
-DLTR
 PDD
+UPST
+NVDA
+FUTU
+UPST
+ZIM
+DKS ath, earnings
+PSTG earnings
+SPLK earnings
 
 M
-LOW
-KR
+DLTR
+DTRM
 
-UPST <190 >220
+DKS
+LOW
+MXIM
+STVN
+XLNX
+DOCS
+BX
+KSS
+ERJ
+BLL >95
+CPRI >61
+DDOG >138
+panw watchForNotes
+
 EBAY >77
 CAR >95
 NUE <110 >129c
 PLUG
 Z < 90
-FUTU < 84
 FUBO <24.5
 EXAS <90
 VRM drain
 BABA drain
 TSM < 107.5
 
-PDD
 MRNA
 AMD
 AMC
