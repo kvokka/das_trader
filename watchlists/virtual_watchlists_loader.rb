@@ -1,10 +1,12 @@
 class VirtualWatchlistsLoader
   # here is the spot where desired watchlists should be defined
   WATCHLISTS = [
+    OpenStruct.new(name: '50dHi_rvol2', virtual_watchlist_number: 1, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,sh_relvol_o2,ta_averagetruerange_o0.5,ta_highlow50d_nl&ft=4&o=ticker'),
     OpenStruct.new(name: '50dHi', virtual_watchlist_number: 1, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_averagetruerange_o0.5,ta_highlow50d_nh&ft=4&o=ticker'),
     OpenStruct.new(name: '50dHi_0-3%', virtual_watchlist_number: 1, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_averagetruerange_o0.5,ta_highlow50d_b0to3h&ft=4&o=ticker'),
     OpenStruct.new(name: 'MarubozuWhiteDay', virtual_watchlist_number: 2, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_averagetruerange_o0.5,ta_candlestick_mw&ft=4&o=ticker'),
     OpenStruct.new(name: 'TodayHi5', virtual_watchlist_number: 2, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_perf2_d5o&ft=4&o=ticker'),
+    OpenStruct.new(name: '50dLow_rvol2', virtual_watchlist_number: 11, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,sh_relvol_o2,ta_averagetruerange_o0.5,ta_highlow50d_nl,ta_volatility_wo3&ft=4&o=ticker'),
     OpenStruct.new(name: '50dLow', virtual_watchlist_number: 11, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_averagetruerange_o0.5,ta_highlow50d_nl,ta_volatility_wo3&ft=4&o=ticker'),
     OpenStruct.new(name: '50dLow_0-3%', virtual_watchlist_number: 11, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_averagetruerange_o0.5,ta_highlow50d_a0to3h&ft=4&o=ticker'),
     OpenStruct.new(name: 'TodayLo5', virtual_watchlist_number: 12, url: 'https://finviz.com/screener.ashx?v=351&f=cap_midover,ind_stocksonly,sh_curvol_o2000,sh_price_o5,ta_perf2_d5u&ft=4&o=ticker'),
