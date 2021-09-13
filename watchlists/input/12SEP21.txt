@@ -1,0 +1,22 @@
+AFRM ATH
+ALIT
+CCJ
+MCFE bounce
+PTON >120 >130
+SKIN >28
+ALIT >14
+ASAN >100
+
+AMC
+AMD
+MRNA
+UPST
+FUTU
+pdd
+NTES
+SAVA
+baba
+
+DOCN watch
+
+TDC <50
